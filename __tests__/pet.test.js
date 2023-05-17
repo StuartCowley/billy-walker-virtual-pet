@@ -11,11 +11,24 @@ describe('constructor', () => {
         expect(pet.name).toEqual('Fido');
       });
 
-    it('sets the initial age as 1', () => {
+    it('runs growUp function once', () => {
       const pet = new Pet('Fido');
 
       pet.growUp();
 
       expect(pet.age).toEqual(1);
+      expect(pet.hunger).toEqual(5);
+      expect(pet.fitness).toEqual(3);
+    });
+
+    describe('walk', () => {
+      it('increases fitness to a maximum of 10', () => {
+        const pet = new Pet('Fido');
+    
+        pet.fitness = 8;
+        pet.walk();
+    
+        expect(pet.fitness).toEqual(10);
+      });
     });
   });
