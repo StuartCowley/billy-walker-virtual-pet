@@ -30,5 +30,15 @@ describe('constructor', () => {
     
         expect(pet.fitness).toEqual(10);
       });
+
+    describe('feed', () => {
+      it('decreases hunger from 6 to 3', () => {
+        const pet = new Pet('Fido');
+    
+        pet.hunger = 6;
+        pet.feed();
+    
+        expect(pet.hunger).toEqual(3);
+      });
     });
-  });
+  })});
