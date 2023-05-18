@@ -20,7 +20,16 @@ describe('constructor', () => {
       expect(pet.hunger).toEqual(5);
       expect(pet.fitness).toEqual(7);
     });
+
+    it('throws an error if the pet is not alive', () => {
+      const pet = new Pet('Fido');
+  
+      pet.age = 30;
+  
+      expect(() => pet.growUp()).toThrow('Your pet is no longer alive :(');
+  });
 });
+
 
 describe('walk', () => {
   it('increases fitness to a maximum of 10', () => {
@@ -32,6 +41,16 @@ describe('walk', () => {
     expect(pet.fitness).toEqual(10);
   });
 
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+
+    pet.age = 30;
+
+    expect(() => pet.walk()).toThrow('Your pet is no longer alive :(');
+  });
+});
+
+
 describe('feed', () => {
   it('decreases hunger from 6 to 3', () => {
     const pet = new Pet('Fido');
@@ -41,6 +60,14 @@ describe('feed', () => {
 
     expect(pet.hunger).toEqual(3);
     });
+
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+
+    pet.age = 30;
+
+    expect(() => pet.feed()).toThrow('Your pet is no longer alive :(');
+  });
 });
 
 describe('checkUp', () => {
@@ -82,6 +109,14 @@ describe('checkUp', () => {
     expect(pet.checkUp()).toEqual("I feel great!");
   })
 
+  it('returns dead :(', () => {
+    const pet = new Pet('Fido');
+
+    pet.age = 30;
+
+    expect(pet.checkUp()).toEqual("Your pet is no longer alive :(")
+  })
+
 describe('isAlive', () => {
     it('returns false i.e. dead pet', () => {
       const pet = new Pet('Fido');
@@ -103,5 +138,4 @@ describe('isAlive', () => {
       expect(pet.isAlive).toEqual(true);
     })
 })
-});
 });
