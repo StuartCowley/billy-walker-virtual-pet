@@ -81,5 +81,27 @@ describe('checkUp', () => {
 
     expect(pet.checkUp()).toEqual("I feel great!");
   })
+
+describe('isAlive', () => {
+    it('returns false i.e. dead pet', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 31;
+      pet.hunger = 11;
+      pet.fitness = 0;
+
+      expect(pet.isAlive).toEqual(false);
+    })
+
+    it('returns true i.e. living pet', () => {
+      const pet = new Pet('Fido');
+
+      pet.age = 20;
+      pet.hunger = 5;
+      pet.fitness = 3;
+
+      expect(pet.isAlive).toEqual(true);
+    })
+})
 });
 });
