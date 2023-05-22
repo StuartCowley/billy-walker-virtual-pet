@@ -116,6 +116,7 @@ describe('checkUp', () => {
 
     expect(pet.checkUp()).toEqual("Your pet is no longer alive :(")
   })
+});
 
 describe('isAlive', () => {
     it('returns false i.e. dead pet', () => {
@@ -137,5 +138,14 @@ describe('isAlive', () => {
 
       expect(pet.isAlive).toEqual(true);
     })
-})
 });
+
+describe('adoptChild', () => {
+  it('returns array with child Rex', () => {
+    const parent = new Pet('Fido');
+    const child = new Pet('Rex');
+    parent.adoptChild(child);
+
+    expect(parent.children[0].name).toEqual('Rex');
+  })
+})

@@ -22,6 +22,7 @@ function Pet(name) {
     this.age = 0;
     this.hunger = 0;
     this.fitness = 10;
+    this.children = [];
 }
 
 // Checks if pet is alive
@@ -30,6 +31,11 @@ Pet.prototype = {
       return this.age < maxAge && this.hunger < maxHunger && this.fitness > 0;
     }
   };
+
+Pet.prototype.adoptChild = function(child) {
+    this.children.push(child);
+    return this.children;
+}
 
 
 Pet.prototype.growUp = function() {
