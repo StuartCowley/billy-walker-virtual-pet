@@ -37,7 +37,6 @@ Pet.prototype.adoptChild = function(child) {
     return this.children;
 }
 
-
 Pet.prototype.growUp = function() {
     if (!this.isAlive) {
         throw new Error ('Your pet is no longer alive :(')
@@ -47,7 +46,6 @@ Pet.prototype.growUp = function() {
     this.fitness -= 3;
     }
     }
-
 
 Pet.prototype.walk = function() {
     if (!this.isAlive) {
@@ -67,7 +65,6 @@ Pet.prototype.feed = function() {
     } else {
         this.hunger = minHunger;
     }
-
 
 Pet.prototype.checkUp = function() {
     if (!this.isAlive) {
