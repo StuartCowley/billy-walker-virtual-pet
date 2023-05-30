@@ -1,6 +1,6 @@
-# Foobar
+# Virtual Pet
 
-Virtual Pet is a JavaScript based game that works like Tamagotchi. Feed your pet, walk it, care for it, love it <3.
+Virtual Pet is a JavaScript based game that works like a Tamagotchi. Feed your pet, walk it, care for it, love it <3.
 
 ## Installation
 
